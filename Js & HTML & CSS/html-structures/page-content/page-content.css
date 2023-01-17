@@ -1,0 +1,17 @@
+h1{
+    size: 25px;
+}
+.italic{
+    font-style: italic;
+}
+.size{
+    size: 24px;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: #CCCCCC;
+}
+section{
+    margin-left: 20px;
+}

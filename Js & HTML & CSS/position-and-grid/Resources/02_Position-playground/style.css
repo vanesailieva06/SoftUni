@@ -1,0 +1,48 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+.viewpoint.lake{
+    background-image: linear-gradient(to right,#195C9D, #41C9A1);
+}
+.viewpoint.mountain{
+    background-image: linear-gradient(to right,#A93475, #D17F16);
+}
+section.card{
+    display: block;
+}
+section{
+    position: relative;
+    height: 400px;
+}
+section.card img{
+    max-width: 250px;
+    max-height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* box-shadow: 5px 5px 10px #555; */
+}
+section.card img{
+    position: relative;
+}
+section.card.lake i{
+    color: white;
+    content: "";
+    position: absolute;
+    bottom: 100px;
+    right: 210px;
+    width: 40px;
+    height: 40px;
+}
+section.card.mountain i{
+    color: white;
+    content: "";
+    position: absolute;
+    bottom: 40px;
+    right: 290px;
+    width: 40px;
+    height: 35px;
+}

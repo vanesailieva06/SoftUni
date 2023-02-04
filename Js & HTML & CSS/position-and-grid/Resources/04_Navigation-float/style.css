@@ -1,0 +1,93 @@
+body{
+    padding: 50px 90px;
+    background-color: rgb(238, 238, 238);
+    box-sizing: border-box;
+}
+header p{
+    display: inline-block;
+    width: 60%;
+    font-size: 27px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+header ul{
+    list-style: none;
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+}
+header ul li{
+    display: inline-block;
+    padding: 5px;
+    color: rgb(0, 102, 0) ;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header{
+    border-bottom: solid 2px black;
+}
+main{
+    display: inline-block;
+    width: 60%;
+}
+main section h1{
+    font-weight: 500;
+    font-size: 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+main img{
+    border: solid 2px black;
+    padding: 5px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 10px 10px 30px lightgrey ,
+    -10px 10px 30px lightgrey,
+    10px -10px 30px lightgrey ,
+    -10px -10px 30px lightgrey;  
+    max-width: 150px;
+    max-height: 200px;
+}
+.level-1 img{
+    float: right;
+    margin-left: 20px; 
+    margin-bottom: 20px;
+}
+.level-3 img{
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.level-3 p{
+    margin-left: 10px;
+   
+}
+main p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+main blockquote{
+    float: right;
+    width: 300px;
+    border-left: solid 5px lightgray;
+    padding-left: 20px;
+    color: grey;
+    font-style: italic;
+    font-family: Georgia, serif;
+}
+aside{
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 80px;
+}
+aside a{
+    text-decoration: none;
+    color:green; 
+}
+h1, h3{
+    font-family: Georgia, serif;
+}
+h1{
+    font-size: 1.2em;
+}
+h3{
+    font-size: 1em;
+}

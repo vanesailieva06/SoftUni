@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+.navigation span {
+  font-size: 20px;
+  color: #000000;
+}
+.navigation li {
+  list-style: none;
+}
+.places-btn {
+  background-color: #370511;
+  border-radius: 20px;
+  padding: 4px 22px;
+  color: white;
+}
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 75%;
+  margin: auto;
+  padding-top: 20px;
+}
+ul {
+  margin: 0px;
+}
+.navigation ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 20px;
+  text-align: center;
+  align-items: center;
+}
+header {
+  height: 700px;
+  background-image: url(images/landing-photo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.text-header {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+  margin: 150px 230px;
+}
+.text-header h1 {
+  font-size: 40px;
+  font-weight: 900;
+}
+.text-header h2 {
+  font-weight: normal;
+}
+.discover {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 75%;
+  margin: auto;
+  gap: 50px;
+}
+.discover article {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 80px;
+}
+.discover article img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.discover .content {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: auto;
+  align-items: center;
+}
+.discover .discover-btn {
+  background-color: transparent;
+  border-radius: 30px;
+  border: #000000 solid 2px;
+  padding: 12px 22px;
+  font-weight: bold;
+}
+.famous-places h1,
+h3 {
+  text-align: center;
+}
+.famous-places h1 {
+  font-size: 40px;
+  padding-top: 50px;
+}
+.famous-places h3 {
+  padding-bottom: 50px;
+  color: gray;
+}
+footer {
+  height: 320px;
+  background-color: #000000;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+footer a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+footer li {
+  list-style: none;
+  padding-bottom: 26px;
+}
+footer span {
+  font-size: 30px;
+}
+footer i {
+  padding-right: 18px;
+  font-size: 26px;
+}
+footer p {
+  padding-bottom: 14px;
+}

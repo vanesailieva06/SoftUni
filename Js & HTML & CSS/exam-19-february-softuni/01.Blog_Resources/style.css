@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #efdaaf;
+}
+.categories {
+  display: grid;
+  grid-template-areas:
+    "music music celebrity  other"
+    "tv-show tv-show art other";
+  grid-template-columns: 0px auto;
+  gap: 20px;
+  margin: 80px;
+}
+li {
+  list-style: none;
+  padding-bottom: 15px;
+  font-size: 22px;
+}
+ul {
+  padding: 0px;
+}
+.other h4 {
+  font-weight: normal;
+  font-size: 24px;
+}
+.other {
+  color: #66545e;
+}
+.music,
+.celebrity,
+.tv-show,
+.art {
+  background-color: #66545e;
+  border-radius: 30px;
+  color: white;
+  border: black solid 1px;
+  height: 290px;
+  box-shadow: rgb(0 0 0 / 50%) 18px 12px 40px 0px;
+  font-size: 18px;
+}
+.music {
+  grid-area: music;
+  vertical-align: middle;
+}
+.celebrity {
+  grid-area: celebrity;
+  vertical-align: middle;
+}
+.tv-show {
+  grid-area: tv-show;
+}
+.art {
+  grid-area: art;
+}
+.other {
+  grid-area: other;
+  margin-left: 14px;
+}
+section img {
+  width: 100%;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  height: 250px;
+}
+section p {
+  padding: 8px 10px;
+}
+
+.other i {
+  padding-right: 6px;
+}

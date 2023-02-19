@@ -1,0 +1,246 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+header {
+  background-color: white;
+}
+header ul li {
+  list-style: none;
+  display: inline-block;
+  font-weight: normal;
+  margin: 6px 14px;
+}
+
+.navigation {
+  display: flex;
+  width: 85%;
+  margin: auto;
+  justify-content: space-between;
+  padding: 18px 0px;
+}
+.navigation .home{
+  border-bottom: #008cba solid 3px;
+}
+.navigation li{
+  transition: all 0.2s ease-in-out;
+}
+.intime {
+  font-size: 20px;
+}
+.time {
+  color: #008cba;
+}
+
+.business {
+  width: 100%;
+  height: 520px;
+  background-image: url("./images/slide2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.promote {
+  display: inline-block;
+  color: white;
+  position: relative;
+  z-index: 0;
+  width: 300px;
+  padding: 10px;
+  margin: 100px 0px 60px 100px;
+}
+.promote::before {
+  content: "";
+  position: absolute;
+  background-color: black;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.promote h2 {
+  font-weight: normal;
+}
+.started-btn {
+  background-color: #008cba;
+  color: white;
+  border-radius: 15px;
+  padding: 6px 24px;
+  margin: 6px 0px;
+}
+.welcome {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  padding: 24px;
+}
+.welcome h2 {
+  font-weight: normal;
+  padding-bottom: 16px;
+}
+.welcome h2::after{
+  content: "";
+  border-bottom: #008cba solid 3px;
+  width: 80px;
+  display: block;
+  margin: auto;
+  margin-top: 6px;
+}
+.welcome p {
+  padding-bottom: 16px;
+}
+.welcome button {
+  background-color: #454545;
+  padding: 8px 20px;
+  border-radius: 20px;
+  color: white;
+}
+.our-services {
+  background-color: #eef0f1;
+}
+.our-services h2::after{
+  content: "";
+  border-bottom: #454545 solid 3px;
+  width: 80px;
+  display: block;
+  margin: auto;
+  margin-top: 6px;
+}
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  gap: 20px;
+  width: 960px;
+  margin: 0 auto;
+  padding: 26px;
+  text-align: center;
+}
+.our-services h2 {
+  font-weight: normal;
+  text-align: center;
+  width: 100%;
+  padding: 28px;
+}
+.services article {
+  background-color: white;
+  border-radius: 4px;
+}
+.our-services img {
+  width: 100%;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.our-services article h4 {
+  font-weight: normal;
+  padding: 20px 0px 14px 0px;
+  font-size: 18px;
+}
+.our-services article p {
+  padding-bottom: 14px 8px;
+}
+.our-services article button {
+  background-color: #454545;
+  padding: 6px;
+  border-radius: 4px;
+  color: white;
+  margin: 14px 0px 20px 0px;
+}
+.welcome-btn,
+.services-btn {
+  border: #454545 solid 2px;
+}
+.subscribe {
+  text-align: center;
+  background-color: #393F43;
+  color: white;
+}
+.subscribe h2 {
+  font-weight: normal;
+  padding: 18px;
+}
+.subscribe h2::after{
+  content: "";
+  border-bottom: white solid 3px;
+  width: 80px;
+  display: block;
+  margin: auto;
+  margin-top: 6px;
+}
+.subscribe p {
+  padding-bottom: 16px;
+  font-size: 12px;
+}
+.subscribe input {
+  background-color: #545a5e;
+  border: none;
+  width: 370px;
+  padding: 8px;
+  border-radius: 4px;
+  color: grey;
+  margin-bottom: 28px;
+}
+.subscribe button {
+  background-color: #6bbfff;
+  color: white;
+  padding: 6px 22px;
+  border-radius: 4px;
+  border: #6bbfff solid 2px;
+}
+.more-info {
+  background-color: #2f3539;
+  color: white;
+  padding: 26px 0px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.more-info li {
+  list-style: none;
+  padding: 6px 0px;
+  font-size: 12px;
+}
+.more-info ul{
+  padding: 0px;
+}
+.more-info a {
+  text-decoration: none;
+  color: white;
+}
+.more-info h5{
+  font-weight: normal;
+  margin: 0px;
+  padding: 8px 0px;
+}
+.more-info span{
+  padding: 4px 0px;
+  display: inline-block;
+  font-size: 12px;
+}
+.address{
+  margin-bottom: 16px;
+  display: inline-block;
+}
+.follow-us span{
+  margin-bottom: 8px;
+}
+.follow-us i{
+  padding: 4px;
+}
+.copyright{
+  background-color: #262B2F;
+  text-align: center;
+  color: white;
+  padding: 8px 0px;
+  font-size: 12px;
+}
+.copyright span{
+  color: #008cba;
+}
+.btn{
+  cursor: pointer;
+}

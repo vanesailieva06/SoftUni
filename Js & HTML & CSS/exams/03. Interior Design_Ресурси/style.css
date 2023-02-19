@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Roboto, sans-serif;
+  width: 1200px;
+  margin: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Abril Fatface;
+}
+header img {
+  position: absolute;
+  width: 80%;
+  margin: auto;
+}
+.title,
+.description {
+  position: relative;
+}
+.title {
+  width: 200px;
+  height: 200px;
+  background: transparent;
+  box-shadow: 4px 3px 19px 0px gray;
+  padding: 10px;
+}
+.title h1 {
+  font-size: xx-large;
+  font-weight: bolder;
+  display: inline-block;
+  width: 70%;
+  border-bottom: white solid 2px;
+}
+.title p {
+  padding-top: 8px;
+}
+.description {
+  background: rgb(155, 146, 138);
+  background: linear-gradient(
+    90deg,
+    rgba(155, 146, 138, 1) 0%,
+    rgba(201, 199, 198, 1) 35%
+  );
+  width: 280px;
+  height: 280px;
+  box-shadow: 4px 3px 19px 0px gray;
+  padding: 16px 6px 6px 6px;
+  text-align: right;
+  color: whitesmoke;
+  
+}
+.description i{
+   color: #6F6966;
+}
+header{
+    max-height: 870px;
+    overflow: hidden;
+}
+header img{
+    object-fit: cover; /* resize the image to cover the container */
+    /* center the image */
+    height: 100%;
+}
+.content-header{
+    display: flex;
+    flex-direction: column;
+}
+.title{
+    align-self: flex-start;
+    margin: 60px 0px 0px 60px;
+}
+.description{
+    align-self: flex-end;
+    margin-right: 60px;
+}

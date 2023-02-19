@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
+body {
+  background-image: url(images/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Mulish", sans-serif;
+}
+.registration {
+  width: 750px;
+  display: inline-block;
+  background-image: url(images/form-background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: 15px;
+  box-shadow: grey 7px 7px 15px 0px;
+  margin: 100px auto;
+  justify-content: center;
+  align-content: center;
+}
+.content{
+    width: 65%;
+}
+.content h2{
+    text-align: center;
+    padding-bottom: 16px;
+}
+.content form{
+    padding-bottom: 8px;
+}
+.content .first-name{
+    padding-right: 16px;
+}
+.registration input {
+  border-radius: 30px;
+  border: lightgray solid 1px;
+  padding: 8px;
+}
+.registration .email-input,
+.password-input,
+.confirm-passwowrd-input {
+  width: 100%;
+}
+.names-container form {
+  display: inline-block;
+}
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 4px;
+  /* width: 20px;
+    height: 15px; */
+  border: 1px solid lightgray;
+  background-color: #ebebeb;
+  vertical-align: middle;
+}
+
+input[type="radio"]:checked {
+  background-color: #000;
+}
+.register-btn {
+  align-self: flex-start;
+  margin: 25px 0 15px 130px;
+  padding: 8px 20px;
+  border-radius: 30px;
+  background-color: #ae3c33;
+  border: #ae3c33 solid 1px;
+  color: white;
+}

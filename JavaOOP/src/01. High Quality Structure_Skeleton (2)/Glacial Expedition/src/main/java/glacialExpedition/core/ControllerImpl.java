@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 import static glacialExpedition.common.ConstantMessages.*;
 import static glacialExpedition.common.ExceptionMessages.*;
 
-public class ControllerImpl implements Controller {
+public class ControllerImpl implements glacialExpedition.core.Controller {
 
     private ExplorerRepository explorerRepository;
     private StateRepository stateRepository;

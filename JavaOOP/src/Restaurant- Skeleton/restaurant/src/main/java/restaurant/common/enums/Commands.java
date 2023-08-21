@@ -5,8 +5,8 @@ public enum Commands {
     addBeverage,
     addTable,
     reserve,
-    orderHealthyFood ,
-    orderBeverage ,
+    orderHealthyFood,
+    orderBeverage,
     closedBill,
     totalMoney,
     END

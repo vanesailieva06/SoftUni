@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class MissionImpl implements Mission{
+public class MissionImpl implements glacialExpedition.models.mission.Mission {
 
 
     private Collection<Explorer> explorers;
@@ -23,7 +23,7 @@ public class MissionImpl implements Mission{
         for (Explorer explorer : neededExplorers) {
             for (String exhibit : exhibits) {
                 explorer.search();
-                if (!explorer.canSearch()){
+                if (!explorer.canSearch()) {
                     break;
                 }
                 explorer.getSuitcase().getExhibits().add(exhibit);

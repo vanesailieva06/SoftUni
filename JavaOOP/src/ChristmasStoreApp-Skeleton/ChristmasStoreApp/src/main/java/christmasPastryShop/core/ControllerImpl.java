@@ -17,9 +17,9 @@ import static christmasPastryShop.common.ExceptionMessages.FOOD_OR_DRINK_EXIST;
 import static christmasPastryShop.common.OutputMessages.*;
 
 public class ControllerImpl implements Controller {
-    private DelicacyRepository<Delicacy> delicacyRepository;
-    private CocktailRepository<Cocktail> cocktailRepository;
-    private BoothRepository<Booth> boothRepository;
+    private final DelicacyRepository<Delicacy> delicacyRepository;
+    private final CocktailRepository<Cocktail> cocktailRepository;
+    private final BoothRepository<Booth> boothRepository;
     private Delicacy delicacy;
     private Cocktail cocktail;
     private Booth booth;
@@ -36,24 +36,24 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String addDelicacy(String type, String name, double price) {
-        if (type.equals("Gingerbread")){
-            delicacy = new Gingerbread(name,price);
-        }else if (type.equals("Stolen")){
+        if (type.equals("Gingerbread")) {
+            delicacy = new Gingerbread(name, price);
+        } else if (type.equals("Stolen")) {
             delicacy = new Stolen(name, price);
-        }else if (delicacyRepository.getByName(name).equals(delicacy)){
+        } else if (delicacyRepository.getByName(name).equals(delicacy)) {
             throw new IllegalArgumentException(String.format(FOOD_OR_DRINK_EXIST, type, name));
         }
         delicacyRepository.add(delicacy);
-        return String.format(DELICACY_ADDED,name, type);
+        return String.format(DELICACY_ADDED, name, type);
     }
 
     @Override
     public String addCocktail(String type, String name, int size, String brand) {
-        if (type.equals("MulledWine")){
+        if (type.equals("MulledWine")) {
             cocktail = new MulledWine(name, size, brand);
-        }else if (type.equals("Hibernation")){
+        } else if (type.equals("Hibernation")) {
             cocktail = new Hibernation(name, size, brand);
-        }else if (cocktailRepository.getByName(name).equals(cocktail)){
+        } else if (cocktailRepository.getByName(name).equals(cocktail)) {
             throw new IllegalArgumentException(String.format(FOOD_OR_DRINK_EXIST, type, name));
         }
 
@@ -63,11 +63,11 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String addBooth(String type, int boothNumber, int capacity) {
-        if (type.equals("OpenBooth")){
+        if (type.equals("OpenBooth")) {
             booth = new OpenBooth(boothNumber, capacity);
-        }else if (type.equals("PrivateBooth")){
+        } else if (type.equals("PrivateBooth")) {
             booth = new PrivateBooth(boothNumber, capacity);
-        }else if (boothRepository.getByNumber(boothNumber).equals(booth)){
+        } else if (boothRepository.getByNumber(boothNumber).equals(booth)) {
             throw new IllegalArgumentException(String.format(BOOTH_EXIST, boothNumber));
         }
 
@@ -80,9 +80,9 @@ public class ControllerImpl implements Controller {
         String output;
         Booth filteredBooths = boothRepository.getAll().stream().filter(b -> !b.isReserved())
                 .findFirst().orElse(null);
-        if (filteredBooths == null){
-            output =  String.format(RESERVATION_NOT_POSSIBLE,numberOfPeople);
-        }else {
+        if (filteredBooths == null) {
+            output = String.format(RESERVATION_NOT_POSSIBLE, numberOfPeople);
+        } else {
             filteredBooths.reserve(numberOfPeople);
             output = String.format(BOOTH_RESERVED, filteredBooths.getBoothNumber(), numberOfPeople);
         }
@@ -94,13 +94,14 @@ public class ControllerImpl implements Controller {
         Booth neededBooth = boothRepository.getByNumber(boothNumber);
         double boothBill = neededBooth.getBill();
         this.totalIncome += boothBill;
-        return String.format(BILL,boothNumber, boothBill);
+        return String.format(BILL, boothNumber, boothBill);
 
     }
 
     @Override
     public String getIncome() {
-        return String.format(TOTAL_INCOME,totalIncome);
+        return String.format(TOTAL_INCOME, totalIncome);
     }
+
     Object
 }

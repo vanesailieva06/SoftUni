@@ -1,6 +1,6 @@
 package solid.products.drinks;
 
-public class Lemonade extends Drinks{
+public class Lemonade extends Drinks {
 
     public static final double CALORIES_PER_100_GRAMS = 53.0;
     public static final double DENSITY = 0.7;

@@ -4,8 +4,7 @@ public class Goods {
     private String name;
     private String goodsCode;
 
-    public Goods(String name, String goodsCode)
-    {
+    public Goods(String name, String goodsCode) {
         this.setName(name);
         this.setGoodsCode(goodsCode);
     }

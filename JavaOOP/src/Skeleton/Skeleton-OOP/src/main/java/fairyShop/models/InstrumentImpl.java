@@ -19,9 +19,9 @@ public class InstrumentImpl implements Instrument {
 
     @Override
     public void use() {
-        if (power - DECREASE_POWER < 0){
+        if (power - DECREASE_POWER < 0) {
             setPower(0);
-        }else {
+        } else {
             setPower(power - DECREASE_POWER);
         }
     }
@@ -31,15 +31,11 @@ public class InstrumentImpl implements Instrument {
         if (power < 0) {
             setPower(0);
             return true;
-        }else if (power == 0){
-            return true;
-        }else {
-            return false;
-        }
+        } else return power == 0;
     }
 
     public void setPower(int power) {
-        if (power < 0){
+        if (power < 0) {
             throw new IllegalArgumentException(INSTRUMENT_POWER_LESS_THAN_ZERO);
         }
         this.power = power;

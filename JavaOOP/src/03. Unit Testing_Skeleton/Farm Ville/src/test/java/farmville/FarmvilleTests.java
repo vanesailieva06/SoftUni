@@ -12,34 +12,34 @@ public class FarmvilleTests {
     private Animal animal;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         farm = new Farm("Gosho's farm", 10);
         animal = new Animal("Cat", 12);
     }
 
     @Test(expected = NullPointerException.class)
-    public void testSetNullNameShouldBeThrowing(){
+    public void testSetNullNameShouldBeThrowing() {
         new Farm(null, 12);
     }
 
     @Test(expected = NullPointerException.class)
-    public void testSetEmptyNameShouldBeThrowing(){
+    public void testSetEmptyNameShouldBeThrowing() {
         new Farm("   ", 9);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testSetCapacityLessThanZeroShouldBeThrowing(){
+    public void testSetCapacityLessThanZeroShouldBeThrowing() {
         new Farm("Toshko's farm", -6);
     }
 
     @Test
-    public void testValidConstructor(){
+    public void testValidConstructor() {
         assertEquals(farm.getName(), "Gosho's farm");
         assertEquals(farm.getCapacity(), 10);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testAddWhenIsFullShouldBeThrowing(){
+    public void testAddWhenIsFullShouldBeThrowing() {
         Farm farm1 = new Farm("Pesho's farm", 1);
         Animal animal1 = new Animal("Dog", 4);
         farm1.add(animal);
@@ -47,26 +47,26 @@ public class FarmvilleTests {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testAddWhenAnimalIsAlreadyInTheFarm(){
+    public void testAddWhenAnimalIsAlreadyInTheFarm() {
         farm.add(animal);
         farm.add(animal);
     }
 
     @Test
-    public void testAddWithValidElements(){
+    public void testAddWithValidElements() {
         farm.add(animal);
         assertEquals(farm.getCount(), 1);
     }
 
     @Test
-    public void testRemove(){
+    public void testRemove() {
         farm.add(animal);
         assertTrue(farm.remove(animal.getType()));
         assertEquals(farm.getCount(), 0);
     }
 
     @Test
-    public void testWhenIsFalse(){
+    public void testWhenIsFalse() {
         assertFalse(farm.remove(animal.getType()));
     }
 }

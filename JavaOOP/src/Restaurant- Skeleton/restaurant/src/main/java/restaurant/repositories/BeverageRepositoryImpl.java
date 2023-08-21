@@ -8,7 +8,7 @@ import java.util.*;
 
 public class BeverageRepositoryImpl implements Repository<Beverages>, BeverageRepository<Beverages> {
 
-    private Map<String, Beverages> entities;
+    private final Map<String, Beverages> entities;
 
     public BeverageRepositoryImpl() {
         entities = new LinkedHashMap<>();
@@ -28,6 +28,6 @@ public class BeverageRepositoryImpl implements Repository<Beverages>, BeverageRe
 
     @Override
     public void add(Beverages entity) {
-       entities.put(entity.getName(), entity);
+        entities.put(entity.getName(), entity);
     }
 }

@@ -10,9 +10,9 @@ import java.io.IOException;
 import java.util.Arrays;
 
 public class EngineImpl implements Engine {
-    private ConsoleReader reader;
-    private ConsoleWriter writer;
-    private Controller controller;
+    private final ConsoleReader reader;
+    private final ConsoleWriter writer;
+    private final Controller controller;
 
     public EngineImpl(ConsoleReader reader, ConsoleWriter writer, Controller controller) {
         this.reader = reader;
@@ -51,14 +51,14 @@ public class EngineImpl implements Engine {
         switch (command) {
 
             case addHealthyFood:
-            result = this.controller.addHealthyFood(
-                    data[0], Double.parseDouble(data[1]), data[2]
-            );
-            break;
+                result = this.controller.addHealthyFood(
+                        data[0], Double.parseDouble(data[1]), data[2]
+                );
+                break;
 
             case addBeverage:
                 result = this.controller.addBeverage(
-                        data[0], Integer.parseInt(data[1]), data[2],  data[3]
+                        data[0], Integer.parseInt(data[1]), data[2], data[3]
                 );
                 break;
 

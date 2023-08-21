@@ -10,7 +10,7 @@ public class CalorieCalculator implements Calculator {
         double sum = 0;
 
         for (Product product : products) {
-                sum += (product.getCalories() / 100) * product.getGrams();
+            sum += (product.getCalories() / 100) * product.getGrams();
         }
 
         return sum;

@@ -10,9 +10,9 @@ import java.io.IOException;
 import java.util.Arrays;
 
 public class EngineImpl implements Engine {
-    private ConsoleReader reader;
-    private ConsoleWriter writer;
-    private Controller controller;
+    private final ConsoleReader reader;
+    private final ConsoleWriter writer;
+    private final Controller controller;
 
     public EngineImpl(ConsoleReader reader, ConsoleWriter writer, Controller controller) {
         this.reader = reader;
@@ -59,7 +59,7 @@ public class EngineImpl implements Engine {
                 break;
             case AddBooth:
                 result = this.controller.addBooth(
-                        data[0],Integer.parseInt(data[1]),Integer.parseInt(data[2]));
+                        data[0], Integer.parseInt(data[1]), Integer.parseInt(data[2]));
                 break;
             case ReserveBooth:
                 result = this.controller.reserveBooth(Integer.parseInt(data[0]));

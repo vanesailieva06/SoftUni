@@ -30,22 +30,22 @@ public class PresentImpl implements Present {
 
     @Override
     public void getCrafted() {
-        if (energyRequired - DECREASE_ENERGY < 0){
+        if (energyRequired - DECREASE_ENERGY < 0) {
             setEnergyRequired(0);
-        }else{
+        } else {
             setEnergyRequired(energyRequired - DECREASE_ENERGY);
         }
     }
 
     public void setName(String name) {
-        if (name == null || name.trim().isEmpty()){
+        if (name == null || name.trim().isEmpty()) {
             throw new NullPointerException(PRESENT_NAME_NULL_OR_EMPTY);
         }
         this.name = name;
     }
 
     public void setEnergyRequired(int energyRequired) {
-        if (energyRequired < 0){
+        if (energyRequired < 0) {
             throw new IllegalArgumentException(PRESENT_ENERGY_LESS_THAN_ZERO);
         }
         this.energyRequired = energyRequired;

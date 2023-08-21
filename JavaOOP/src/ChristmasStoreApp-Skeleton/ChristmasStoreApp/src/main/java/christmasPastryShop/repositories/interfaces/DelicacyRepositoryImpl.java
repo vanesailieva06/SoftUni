@@ -5,9 +5,9 @@ import christmasPastryShop.entities.delicacies.interfaces.Delicacy;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class DelicacyRepositoryImpl implements Repository<Delicacy>, DelicacyRepository<Delicacy>{
+public class DelicacyRepositoryImpl implements Repository<Delicacy>, DelicacyRepository<Delicacy> {
 
-    private Collection<Delicacy> models;
+    private final Collection<Delicacy> models;
 
     public DelicacyRepositoryImpl() {
         models = new ArrayList<>();

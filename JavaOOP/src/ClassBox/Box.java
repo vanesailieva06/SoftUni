@@ -12,21 +12,21 @@ public class Box {
     }
 
     private void setLength(double length) {
-        if(isItNotValid(length)){
+        if (isItNotValid(length)) {
             throw new IllegalArgumentException("Length cannot be zero or negative.");
         }
         this.length = length;
     }
 
     private void setWidth(double width) {
-        if(isItNotValid(width)){
+        if (isItNotValid(width)) {
             throw new IllegalArgumentException("Width cannot be zero or negative.");
         }
         this.width = width;
     }
 
     private void setHeight(double height) {
-        if(isItNotValid(height)){
+        if (isItNotValid(height)) {
             throw new IllegalArgumentException("Height cannot be zero or negative.");
         }
         this.height = height;
@@ -46,6 +46,7 @@ public class Box {
     public double calculateVolume() {
         return length * height * width;
     }
+
     private boolean isItNotValid(double parameter) {
         return parameter <= 0;
     }

@@ -1,6 +1,6 @@
 package glacialExpedition.models.explorers;
 
-public class NaturalExplorer extends BaseExplorer{
+public class NaturalExplorer extends BaseExplorer {
 
     private static final double ENERGY = 60;
     private static final double DECREASE_ENERGY = 7;

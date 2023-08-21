@@ -27,5 +27,6 @@ public interface Table {
     void clear();
 
     String tableInformation();
+
     void setSize(int size);
 }

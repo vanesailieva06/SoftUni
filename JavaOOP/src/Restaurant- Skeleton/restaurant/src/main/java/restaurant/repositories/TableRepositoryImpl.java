@@ -8,7 +8,7 @@ import java.util.*;
 
 public class TableRepositoryImpl implements Repository<Table>, TableRepository<Table> {
 
-    private Map<Integer, Table> entities;
+    private final Map<Integer, Table> entities;
 
     public TableRepositoryImpl() {
         entities = new LinkedHashMap<>();

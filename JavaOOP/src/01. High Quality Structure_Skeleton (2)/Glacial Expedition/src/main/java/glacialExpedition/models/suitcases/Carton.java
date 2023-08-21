@@ -3,9 +3,9 @@ package glacialExpedition.models.suitcases;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Carton implements Suitcase{
+public class Carton implements Suitcase {
 
-    private Collection<String> exhibits;
+    private final Collection<String> exhibits;
 
     public Carton() {
         exhibits = new ArrayList<>();

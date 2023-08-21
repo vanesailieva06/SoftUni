@@ -5,11 +5,11 @@ import glacialExpedition.models.suitcases.Suitcase;
 
 import static glacialExpedition.common.ExceptionMessages.*;
 
-public abstract class BaseExplorer implements Explorer{
+public abstract class BaseExplorer implements Explorer {
 
     private String name;
     private double energy;
-    private Suitcase suitcase;
+    private final Suitcase suitcase;
 
     private static final double DECREASE_ENERGY = 15;
 
@@ -31,7 +31,7 @@ public abstract class BaseExplorer implements Explorer{
 
     @Override
     public boolean canSearch() {
-       return energy > 0;
+        return energy > 0;
     }
 
     @Override
@@ -51,14 +51,14 @@ public abstract class BaseExplorer implements Explorer{
     }
 
     public void setName(String name) {
-        if (name == null || name.trim().isEmpty()){
+        if (name == null || name.trim().isEmpty()) {
             throw new NullPointerException(EXPLORER_NAME_NULL_OR_EMPTY);
         }
         this.name = name;
     }
 
     public void setEnergy(double energy) {
-        if (energy < 0){
+        if (energy < 0) {
             throw new IllegalArgumentException(EXPLORER_ENERGY_LESS_THAN_ZERO);
         }
         this.energy = energy;

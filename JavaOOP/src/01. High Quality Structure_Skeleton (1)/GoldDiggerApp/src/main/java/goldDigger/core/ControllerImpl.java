@@ -1,6 +1,6 @@
 package goldDigger.core;
 
-public class ControllerImpl implements Controller{
+public class ControllerImpl implements Controller {
     @Override
     public String addDiscoverer(String kind, String discovererName) {
         return null;

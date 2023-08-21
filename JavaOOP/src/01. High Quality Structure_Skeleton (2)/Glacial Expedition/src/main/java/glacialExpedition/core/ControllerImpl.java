@@ -1,4 +1,4 @@
-package glacialExpedition.core;
+package glacialExpedition;
 
 import glacialExpedition.models.explorers.AnimalExplorer;
 import glacialExpedition.models.explorers.Explorer;
@@ -19,9 +19,9 @@ import static glacialExpedition.common.ExceptionMessages.*;
 
 public class ControllerImpl implements glacialExpedition.core.Controller {
 
-    private ExplorerRepository explorerRepository;
-    private StateRepository stateRepository;
-    private Mission mission;
+    private final ExplorerRepository explorerRepository;
+    private final StateRepository stateRepository;
+    private final Mission mission;
     private int exploreCount;
 
     public ControllerImpl() {
@@ -34,13 +34,13 @@ public class ControllerImpl implements glacialExpedition.core.Controller {
     public String addExplorer(String type, String explorerName) {
         Explorer explorer;
 
-        if (type.equals("NaturalExplorer")){
+        if (type.equals("NaturalExplorer")) {
             explorer = new NaturalExplorer(explorerName);
-        }else if (type.equals("GlacierExplorer")){
+        } else if (type.equals("GlacierExplorer")) {
             explorer = new GlacierExplorer(explorerName);
         } else if (type.equals("AnimalExplorer")) {
             explorer = new AnimalExplorer(explorerName);
-        }else{
+        } else {
             throw new IllegalArgumentException(EXPLORER_INVALID_TYPE);
         }
 
@@ -59,7 +59,7 @@ public class ControllerImpl implements glacialExpedition.core.Controller {
     @Override
     public String retireExplorer(String explorerName) {
         Explorer currentExplorer = explorerRepository.byName(explorerName);
-        if (currentExplorer == null){
+        if (currentExplorer == null) {
             throw new IllegalArgumentException(String.format(EXPLORER_DOES_NOT_EXIST, explorerName));
         }
         explorerRepository.remove(currentExplorer);
@@ -71,13 +71,13 @@ public class ControllerImpl implements glacialExpedition.core.Controller {
         State currentState = stateRepository.byName(stateName);
         List<Explorer> validExplorer = explorerRepository.getCollection().stream().filter(explorer -> explorer.getEnergy() > 50)
                 .collect(Collectors.toList());
-        if (validExplorer == null){
+        if (validExplorer == null) {
             return "You must have at least one explorer to explore the state.";
         }
         mission.explore(currentState, validExplorer);
         exploreCount++;
-        int retiredExplorerCount = validExplorer.size() - mission.getExplorers().size();;
-        return String.format(STATE_EXPLORER, stateName,retiredExplorerCount);
+        int retiredExplorerCount = validExplorer.size() - mission.getExplorers().size();
+        return String.format(STATE_EXPLORER, stateName, retiredExplorerCount);
     }
 
     @Override
@@ -93,12 +93,12 @@ public class ControllerImpl implements glacialExpedition.core.Controller {
                     .append(System.lineSeparator())
                     .append(String.format(FINAL_EXPLORER_ENERGY, explorer.getEnergy()))
                     .append(System.lineSeparator());
-            if (explorer.getSuitcase().getExhibits().size() == 0){
+            if (explorer.getSuitcase().getExhibits().size() == 0) {
                 sb.append(String.format(FINAL_EXPLORER_SUITCASE_EXHIBITS, "None"))
                         .append(System.lineSeparator());
-            }else {
+            } else {
                 sb.append(String.format(FINAL_EXPLORER_SUITCASE_EXHIBITS, String.join(FINAL_EXPLORER_SUITCASE_EXHIBITS_DELIMITER,
-                        explorer.getSuitcase().getExhibits())))
+                                explorer.getSuitcase().getExhibits())))
                         .append(System.lineSeparator());
             }
         }

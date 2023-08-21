@@ -10,11 +10,11 @@ import java.util.stream.Collectors;
 import static fairyShop.common.ConstantMessages.*;
 import static fairyShop.common.ExceptionMessages.*;
 
-public class ControllerImpl implements Controller{
+public class ControllerImpl implements Controller {
 
-    private HelperRepository helperRepository;
-    private PresentRepository presentRepository;
-    private Shop shop;
+    private final HelperRepository helperRepository;
+    private final PresentRepository presentRepository;
+    private final Shop shop;
     private int craftedCount;
 
 
@@ -28,11 +28,11 @@ public class ControllerImpl implements Controller{
     @Override
     public String addHelper(String type, String helperName) {
         Helper helper;
-        if (type.equals("Sleepy")){
+        if (type.equals("Sleepy")) {
             helper = new Sleepy(helperName);
-        }else if (type.equals("Happy")){
+        } else if (type.equals("Happy")) {
             helper = new Happy(helperName);
-        }else {
+        } else {
             throw new IllegalArgumentException(HELPER_TYPE_DOESNT_EXIST);
         }
         helperRepository.add(helper);
@@ -43,7 +43,7 @@ public class ControllerImpl implements Controller{
     public String addInstrumentToHelper(String helperName, int power) {
         Helper currentHelper = helperRepository.findByName(helperName);
         Instrument instrument = new InstrumentImpl(power);
-        if (currentHelper == null){
+        if (currentHelper == null) {
             throw new IllegalArgumentException(HELPER_DOESNT_EXIST);
         }
         currentHelper.getInstruments().add(instrument);
@@ -62,17 +62,17 @@ public class ControllerImpl implements Controller{
         Present currentPresent = presentRepository.findByName(presentName);
         List<Helper> validHelpers = helperRepository.getModels().values().stream().filter(helper -> helper.getEnergy() > 50)
                 .collect(Collectors.toList());
-        if (validHelpers == null){
+        if (validHelpers == null) {
             throw new IllegalArgumentException(NO_HELPER_READY);
         }
         for (Helper helper : validHelpers) {
             shop.craft(currentPresent, helper);
         }
         StringBuilder sb = new StringBuilder();
-        if (currentPresent.isDone()){
+        if (currentPresent.isDone()) {
             sb.append(String.format(PRESENT_DONE, presentName, "done"));
             craftedCount++;
-        }else{
+        } else {
             sb.append(String.format(PRESENT_DONE, presentName, "not done"));
         }
         sb.append(String.format(COUNT_BROKEN_INSTRUMENTS, shop.getBrokenInstruments().size()));
@@ -88,7 +88,7 @@ public class ControllerImpl implements Controller{
         //"Energy: {helperEnergy1}"
         //"Instruments: {countInstruments} not broken left"
         sb.append(String.format("%d presents are done!",
-                craftedCount))
+                        craftedCount))
                 .append(System.lineSeparator())
                 .append("Helpers info:").append(System.lineSeparator());
 
@@ -97,7 +97,7 @@ public class ControllerImpl implements Controller{
                     .append(String.format("Energy: %d", helper.getEnergy()))
                     .append(System.lineSeparator())
                     .append(String.format("Instruments: %d not broken left"
-                            ,helper.getInstruments().size()))
+                            , helper.getInstruments().size()))
                     .append(System.lineSeparator());
         }
         return sb.toString().trim();

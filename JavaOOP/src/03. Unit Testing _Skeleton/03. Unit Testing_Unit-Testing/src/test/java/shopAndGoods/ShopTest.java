@@ -13,7 +13,7 @@ public class ShopTest {
     private Goods goods;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         shop = new Shop();
         goods = new Goods("Misho", "1");
     }

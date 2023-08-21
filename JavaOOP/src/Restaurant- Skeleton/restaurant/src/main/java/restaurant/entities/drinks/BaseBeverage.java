@@ -12,10 +12,10 @@ public abstract class BaseBeverage implements Beverages {
     private String brand;
 
     public BaseBeverage(String name, int counter, double price, String brand) {
-       setName(name);
-       setCounter(counter);
-       setPrice(price);
-       setBrand(brand);
+        setName(name);
+        setCounter(counter);
+        setPrice(price);
+        setBrand(brand);
     }
 
     @Override
@@ -39,7 +39,7 @@ public abstract class BaseBeverage implements Beverages {
     }
 
     public void setName(String name) {
-        if (name == null || name.trim().isEmpty()){
+        if (name == null || name.trim().isEmpty()) {
             throw new IllegalArgumentException(INVALID_NAME);
         }
         this.name = name;
@@ -47,21 +47,21 @@ public abstract class BaseBeverage implements Beverages {
 
     @Override
     public void setCounter(int counter) {
-        if (counter <= 0){
+        if (counter <= 0) {
             throw new IllegalArgumentException(INVALID_COUNTER);
         }
         this.counter = counter;
     }
 
     public void setPrice(double price) {
-        if (price <= 0){
+        if (price <= 0) {
             throw new IllegalArgumentException(INVALID_PORTION);
         }
         this.price = price;
     }
 
     public void setBrand(String brand) {
-        if (brand == null || brand.trim().isEmpty()){
+        if (brand == null || brand.trim().isEmpty()) {
             throw new IllegalArgumentException(INVALID_BRAND);
         }
         this.brand = brand;

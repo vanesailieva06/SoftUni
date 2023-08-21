@@ -12,7 +12,7 @@ public class Farm {
 
     private int capacity;
     private String name;
-    private Collection<Animal> animals;
+    private final Collection<Animal> animals;
 
     public Farm(String name, int capacity) {
         this.setName(name);

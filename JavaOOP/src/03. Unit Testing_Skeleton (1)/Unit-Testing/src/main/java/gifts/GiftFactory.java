@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class GiftFactory {
-    private Collection<Gift> data;
+    private final Collection<Gift> data;
 
     public GiftFactory() {
         this.data = new ArrayList<>();

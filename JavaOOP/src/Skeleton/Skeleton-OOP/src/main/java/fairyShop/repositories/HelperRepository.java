@@ -6,7 +6,7 @@ import java.util.*;
 
 public class HelperRepository implements Repository<Helper> {
 
-    private Map<String, Helper> helpers;
+    private final Map<String, Helper> helpers;
 
     public HelperRepository() {
         helpers = new LinkedHashMap<>();

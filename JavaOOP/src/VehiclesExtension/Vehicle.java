@@ -8,7 +8,7 @@ public abstract class Vehicle {
 
     private double tankCapacity;
 
-    public Vehicle(double fuelQuantity, double fuelConsumption,double tankCapacity) {
+    public Vehicle(double fuelQuantity, double fuelConsumption, double tankCapacity) {
         this.fuelQuantity = fuelQuantity;
         this.fuelConsumption = fuelConsumption;
         this.tankCapacity = tankCapacity;
@@ -42,8 +42,10 @@ public abstract class Vehicle {
         double newConsumption = fuelConsumption + getSummerConsumption();
         return drivePrivate(distance, newConsumption);
     }
+
     public abstract double getSummerConsumption();
-    public String driveEmpty(double distance){
+
+    public String driveEmpty(double distance) {
         return drivePrivate(distance, fuelConsumption);
     }
 
@@ -58,11 +60,11 @@ public abstract class Vehicle {
         }
     }
 
-    public void refuel(double liters){
-        if (liters + fuelQuantity > tankCapacity){
+    public void refuel(double liters) {
+        if (liters + fuelQuantity > tankCapacity) {
             throw new IllegalArgumentException("Cannot fit fuel in tank");
         }
-        if (liters <= 0){
+        if (liters <= 0) {
             throw new IllegalArgumentException("Fuel must be a positive number");
         }
         setFuelQuantity(getFuelQuantity() + liters);

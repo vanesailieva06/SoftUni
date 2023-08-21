@@ -1,8 +1,8 @@
 package InterfacesAndAbstraction.Person;
 
-public class Pet implements Birthable{
-    private String name;
-    private String birthDate;
+public class Pet implements Birthable {
+    private final String name;
+    private final String birthDate;
 
     public Pet(String name, String birthDate) {
         this.name = name;

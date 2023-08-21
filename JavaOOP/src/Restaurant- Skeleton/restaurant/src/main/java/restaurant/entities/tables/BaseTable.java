@@ -11,9 +11,9 @@ import static restaurant.common.ExceptionMessages.*;
 
 public abstract class BaseTable implements Table {
 
-    private Collection<HealthyFood> healthyFood;
-    private Collection<Beverages> beverages;
-    private int number;
+    private final Collection<HealthyFood> healthyFood;
+    private final Collection<Beverages> beverages;
+    private final int number;
     private int size;
     private int numberOfPeople;
     private double pricePerPerson;
@@ -94,26 +94,25 @@ public abstract class BaseTable implements Table {
         //Size - {table size}
         //Type - {table type}
         //All price - {price per person for the current table}"
-        StringBuilder sb = new StringBuilder();
-        sb.append(String.format("Table - %d", number)).append(System.lineSeparator())
-                .append(String.format("Size - %d", size)).append(System.lineSeparator())
-                .append(String.format("Type - %s", getClass().getSimpleName()))
-                .append(System.lineSeparator())
-                .append(String.format("All price - %.2f", pricePerPerson)).append(System.lineSeparator());
-        return sb.toString().trim();
+        String sb = String.format("Table - %d", number) + System.lineSeparator() +
+                String.format("Size - %d", size) + System.lineSeparator() +
+                String.format("Type - %s", getClass().getSimpleName()) +
+                System.lineSeparator() +
+                String.format("All price - %.2f", pricePerPerson) + System.lineSeparator();
+        return sb.trim();
     }
 
 
     @Override
     public void setSize(int size) {
-        if (size < 0){
+        if (size < 0) {
             throw new IllegalArgumentException(INVALID_TABLE_SIZE);
         }
         this.size = size;
     }
 
     public void setNumberOfPeople(int numberOfPeople) {
-        if (numberOfPeople <= 0){
+        if (numberOfPeople <= 0) {
             throw new IllegalArgumentException(INVALID_NUMBER_OF_PEOPLE);
         }
         this.numberOfPeople = numberOfPeople;

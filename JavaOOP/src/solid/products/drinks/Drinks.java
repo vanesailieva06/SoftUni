@@ -3,9 +3,9 @@ package solid.products.drinks;
 import solid.products.Product;
 
 public abstract class Drinks implements Product {
-    private double milliliters;
-    private double calories;
-    private double density;
+    private final double milliliters;
+    private final double calories;
+    private final double density;
 
     public Drinks(double milliliters, double calories, double density) {
         this.milliliters = milliliters;

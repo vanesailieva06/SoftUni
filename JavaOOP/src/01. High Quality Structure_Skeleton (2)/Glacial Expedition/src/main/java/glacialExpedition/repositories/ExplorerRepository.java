@@ -7,7 +7,7 @@ import java.util.Collection;
 
 public class ExplorerRepository implements Repository<Explorer> {
 
-    private Collection<Explorer> explorers;
+    private final Collection<Explorer> explorers;
 
     public ExplorerRepository() {
         explorers = new ArrayList<>();

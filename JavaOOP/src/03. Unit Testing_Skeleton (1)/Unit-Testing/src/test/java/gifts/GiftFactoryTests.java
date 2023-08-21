@@ -11,38 +11,38 @@ public class GiftFactoryTests {
     private Gift gift;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         giftFactory = new GiftFactory();
         gift = new Gift("Present", 25);
 
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testCreateGiftWithExistingGiftShouldThrow(){
+    public void testCreateGiftWithExistingGiftShouldThrow() {
         giftFactory.createGift(gift);
         giftFactory.createGift(gift);
     }
 
     @Test
-    public void testCreateGiftWithValidElements(){
+    public void testCreateGiftWithValidElements() {
         giftFactory.createGift(gift);
         assertEquals(giftFactory.getCount(), 1);
     }
 
     @Test(expected = NullPointerException.class)
-    public void testRemoveGiftWithNullNameShouldThrow(){
+    public void testRemoveGiftWithNullNameShouldThrow() {
         giftFactory.removeGift(null);
     }
 
     @Test
-    public void testRemoveWithValidElements(){
+    public void testRemoveWithValidElements() {
         giftFactory.createGift(new Gift("Doll", 20));
         assertTrue(giftFactory.removeGift("Doll"));
         assertEquals(giftFactory.getCount(), 0);
     }
 
     @Test
-    public void testGetPresentWithLeastMagic(){
+    public void testGetPresentWithLeastMagic() {
         giftFactory.createGift(gift);
         giftFactory.createGift(new Gift("Car", 15));
         Gift presentWithLeastMagic = giftFactory.getPresentWithLeastMagic();
@@ -50,7 +50,7 @@ public class GiftFactoryTests {
     }
 
     @Test
-    public void testGetPresent(){
+    public void testGetPresent() {
         giftFactory.createGift(gift);
         giftFactory.createGift(new Gift("Car", 15));
         Gift present = giftFactory.getPresent("Present");

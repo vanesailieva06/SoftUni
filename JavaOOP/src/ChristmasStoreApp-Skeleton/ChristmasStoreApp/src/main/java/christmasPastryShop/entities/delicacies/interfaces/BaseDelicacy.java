@@ -15,21 +15,21 @@ public abstract class BaseDelicacy implements Delicacy {
     }
 
     public void setName(String name) {
-        if (name == null || name.trim().isEmpty()){
+        if (name == null || name.trim().isEmpty()) {
             throw new IllegalArgumentException(INVALID_NAME);
         }
         this.name = name;
     }
 
     public void setPortion(double portion) {
-        if (portion <= 0){
+        if (portion <= 0) {
             throw new IllegalArgumentException(INVALID_PORTION);
         }
         this.portion = portion;
     }
 
     public void setPrice(double price) {
-        if (price <= 0){
+        if (price <= 0) {
             throw new IllegalArgumentException(INVALID_PRICE);
         }
         this.price = price;

@@ -32,14 +32,14 @@ public abstract class Food implements HealthyFood {
     }
 
     public void setName(String name) {
-        if (name == null || name.trim().isEmpty()){
+        if (name == null || name.trim().isEmpty()) {
             throw new IllegalArgumentException(INVALID_NAME);
         }
         this.name = name;
     }
 
     public void setPortion(double portion) {
-        if (portion <=  0){
+        if (portion <= 0) {
             throw new IllegalArgumentException(INVALID_PORTION);
         }
         this.portion = portion;
@@ -47,7 +47,7 @@ public abstract class Food implements HealthyFood {
 
     @Override
     public void setPrice(double price) {
-        if (price <= 0){
+        if (price <= 0) {
             throw new IllegalArgumentException(INVALID_PRICE);
         }
         this.price = price;

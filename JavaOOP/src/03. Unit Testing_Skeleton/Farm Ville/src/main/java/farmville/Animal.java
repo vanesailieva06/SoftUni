@@ -1,8 +1,8 @@
 package farmville;
 
 public class Animal {
-    private String type;
-    private double energy;
+    private final String type;
+    private final double energy;
 
     public Animal(String type, double energy) {
         this.type = type;

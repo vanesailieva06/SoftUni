@@ -11,11 +11,11 @@ import java.util.List;
 
 import static christmasPastryShop.common.ExceptionMessages.*;
 
-public abstract class BaseBooth implements Booth{
+public abstract class BaseBooth implements Booth {
 
-    private Collection<Delicacy> delicacyOrders;
-    private Collection<Cocktail> cocktailOrders;
-    private int boothNumber;
+    private final Collection<Delicacy> delicacyOrders;
+    private final Collection<Cocktail> cocktailOrders;
+    private final int boothNumber;
     private int capacity;
     private int numberOfPeople;
     private double pricePerPerson;
@@ -44,10 +44,7 @@ public abstract class BaseBooth implements Booth{
 
     @Override
     public boolean isReserved() {
-        if (price != 0){
-            return true;
-        }
-        return false;
+        return price != 0;
     }
 
     @Override
@@ -70,14 +67,14 @@ public abstract class BaseBooth implements Booth{
     }
 
     public void setCapacity(int capacity) {
-        if (capacity < 0){
+        if (capacity < 0) {
             throw new IllegalArgumentException(INVALID_TABLE_CAPACITY);
         }
         this.capacity = capacity;
     }
 
     public void setNumberOfPeople(int numberOfPeople) {
-        if (numberOfPeople <= 0){
+        if (numberOfPeople <= 0) {
             throw new IllegalArgumentException(INVALID_NUMBER_OF_PEOPLE);
         }
         this.numberOfPeople = numberOfPeople;

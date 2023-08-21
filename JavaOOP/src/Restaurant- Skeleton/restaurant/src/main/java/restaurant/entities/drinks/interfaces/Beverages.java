@@ -8,5 +8,6 @@ public interface Beverages {
     double getPrice();
 
     String getBrand();
+
     void setCounter(int counter);
 }

@@ -20,7 +20,7 @@ public class Main {
         CardRank rank = CardRank.valueOf(rankCard);
         CardSuit suit = CardSuit.valueOf(suitCard);
         int sum = rank.getPower() + suit.getPower();
-        System.out.printf("Card name: %s of %s; Card power: %d", rank.name(),suit.name(),sum);
+        System.out.printf("Card name: %s of %s; Card power: %d", rank.name(), suit.name(), sum);
 
     }
 }

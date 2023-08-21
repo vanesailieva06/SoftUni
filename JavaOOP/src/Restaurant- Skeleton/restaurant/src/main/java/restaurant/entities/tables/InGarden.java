@@ -1,6 +1,6 @@
 package restaurant.entities.tables;
 
-public class InGarden extends BaseTable{
+public class InGarden extends BaseTable {
 
     private static final double PRICE_PER_PERSON = 4.50;
 

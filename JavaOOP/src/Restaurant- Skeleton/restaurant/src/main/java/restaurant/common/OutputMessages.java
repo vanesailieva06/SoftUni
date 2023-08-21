@@ -23,5 +23,5 @@ public class OutputMessages {
 
     public static final String BILL = "Table: %d with bill: %.2f";
 
-    public static final String TOTAL_MONEY =  "Total money for the restaurant: %.2flv.";
+    public static final String TOTAL_MONEY = "Total money for the restaurant: %.2flv.";
 }

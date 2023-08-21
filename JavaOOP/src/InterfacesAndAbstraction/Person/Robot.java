@@ -1,8 +1,8 @@
 package InterfacesAndAbstraction.Person;
 
-public class Robot implements Identifiable{
-    private String id;
-    private String model;
+public class Robot implements Identifiable {
+    private final String id;
+    private final String model;
 
     public Robot(String id, String model) {
         this.id = id;

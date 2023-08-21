@@ -4,7 +4,7 @@ public class Gift {
     private String type;
     private double magic;
 
-    public Gift(String type, double magic){
+    public Gift(String type, double magic) {
         this.setType(type);
         this.setMagic(magic);
     }

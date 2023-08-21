@@ -6,7 +6,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class Shop {
-    private Map<String, Goods> shelves;
+    private final Map<String, Goods> shelves;
 
     public Shop() {
         this.shelves = new LinkedHashMap<>();
@@ -28,7 +28,7 @@ public class Shop {
         return Collections.unmodifiableMap(this.shelves);
     }
 
-    public String addGoods(String shelf, Goods goods) throws OperationNotSupportedException, IllegalArgumentException{
+    public String addGoods(String shelf, Goods goods) throws OperationNotSupportedException, IllegalArgumentException {
         if (!this.shelves.containsKey(shelf)) {
             throw new IllegalArgumentException("The shelf doesn't exist!");
         }
@@ -46,7 +46,7 @@ public class Shop {
         return String.format("Goods: %s is placed successfully!", goods.getGoodsCode());
     }
 
-    public String removeGoods (String shelf, Goods goods) {
+    public String removeGoods(String shelf, Goods goods) {
         if (!this.shelves.containsKey(shelf)) {
             throw new IllegalArgumentException("The shelf doesn't exist!");
         }

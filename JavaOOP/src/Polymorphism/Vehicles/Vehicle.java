@@ -38,7 +38,7 @@ public class Vehicle {
         }
     }
 
-    public void refuel(double liters){
+    public void refuel(double liters) {
         setFuelQuantity(getFuelQuantity() + liters);
     }
 

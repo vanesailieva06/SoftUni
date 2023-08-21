@@ -6,5 +6,6 @@ public interface State {
     Collection<String> getExhibits();
 
     String getName();
+
     void setExhibits(Collection<String> exhibits);
 }

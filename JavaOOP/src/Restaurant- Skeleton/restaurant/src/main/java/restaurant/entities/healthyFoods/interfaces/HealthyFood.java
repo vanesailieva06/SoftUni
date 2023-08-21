@@ -6,5 +6,6 @@ public interface HealthyFood {
     double getPortion();
 
     double getPrice();
+
     void setPrice(double price);
 }

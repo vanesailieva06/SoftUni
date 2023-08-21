@@ -7,15 +7,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-public class EngineImpl implements Engine{
-    private Controller controller;
-    private BufferedReader reader;
+public class EngineImpl implements Engine {
+    private final Controller controller;
+    private final BufferedReader reader;
 
     public EngineImpl(Controller controller) {
         this.controller = controller;
         this.reader = new BufferedReader(new InputStreamReader(System.in));
     }
-
 
 
     @Override

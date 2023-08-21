@@ -1,10 +1,10 @@
 package InterfacesAndAbstraction.Person;
 
 public class Citizen implements Person, Identifiable, Birthable {
-    private String name;
-    private int age;
-    private String birthDate;
-    private String id;
+    private final String name;
+    private final int age;
+    private final String birthDate;
+    private final String id;
 
     public Citizen(String name, int age, String birthDate, String id) {
         this.name = name;

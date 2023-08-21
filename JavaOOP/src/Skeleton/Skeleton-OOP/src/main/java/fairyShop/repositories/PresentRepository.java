@@ -6,7 +6,7 @@ import java.util.*;
 
 public class PresentRepository implements Repository<Present> {
 
-    private Map<String, Present> presents;
+    private final Map<String, Present> presents;
 
     public PresentRepository() {
         presents = new LinkedHashMap<>();

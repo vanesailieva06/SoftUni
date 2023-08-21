@@ -20,9 +20,9 @@ import static restaurant.common.OutputMessages.*;
 
 public class ControllerImpl implements Controller {
 
-    private HealthFoodRepository<HealthyFood> healthFoodRepository;
-    private BeverageRepository<Beverages> beverageRepository;
-    private TableRepository<Table> tableRepository;
+    private final HealthFoodRepository<HealthyFood> healthFoodRepository;
+    private final BeverageRepository<Beverages> beverageRepository;
+    private final TableRepository<Table> tableRepository;
     private double totalMoney;
 
     public ControllerImpl(HealthFoodRepository<HealthyFood> healthFoodRepository, BeverageRepository<Beverages> beverageRepository, TableRepository<Table> tableRepository) {
@@ -34,11 +34,11 @@ public class ControllerImpl implements Controller {
     @Override
     public String addHealthyFood(String type, double price, String name) {
         HealthyFood healthyFood = healthFoodRepository.foodByName(name);
-        if (type.equals("Salad") && healthyFood == null){
+        if (type.equals("Salad") && healthyFood == null) {
             healthyFood = new Salad(name, price);
-        }else if (type.equals("VeganBiscuits") && healthyFood == null) {
+        } else if (type.equals("VeganBiscuits") && healthyFood == null) {
             healthyFood = new VeganBiscuits(name, price);
-        }else{
+        } else {
             healthyFood.setPrice(price);
             throw new IllegalArgumentException(String.format(FOOD_EXIST, name));
         }
@@ -47,13 +47,13 @@ public class ControllerImpl implements Controller {
     }
 
     @Override
-    public String addBeverage(String type, int counter, String brand, String name){
+    public String addBeverage(String type, int counter, String brand, String name) {
         Beverages beverages = beverageRepository.beverageByName(name, brand);
-        if (type.equals("Fresh") && beverages == null){
+        if (type.equals("Fresh") && beverages == null) {
             beverages = new Fresh(name, counter, brand);
-        }else if (type.equals("Smoothie") && beverages == null){
-            beverages = new Smoothie(name,counter, brand);
-        }else{
+        } else if (type.equals("Smoothie") && beverages == null) {
+            beverages = new Smoothie(name, counter, brand);
+        } else {
             beverages.setCounter(counter);
             throw new IllegalArgumentException(String.format(BEVERAGE_EXIST, name));
         }
@@ -64,11 +64,11 @@ public class ControllerImpl implements Controller {
     @Override
     public String addTable(String type, int tableNumber, int capacity) {
         Table table = tableRepository.byNumber(tableNumber);
-        if (type.equals("Indoors") && table == null){
+        if (type.equals("Indoors") && table == null) {
             table = new Indoors(tableNumber, capacity);
-        }else if (type.equals("InGarden") && table == null){
+        } else if (type.equals("InGarden") && table == null) {
             table = new InGarden(tableNumber, capacity);
-        }else {
+        } else {
             table.setSize(capacity);
             throw new IllegalArgumentException(String.format(TABLE_IS_ALREADY_ADDED, tableNumber));
         }
@@ -82,7 +82,7 @@ public class ControllerImpl implements Controller {
         Table currentTable = tableRepository.getAllEntities().values().stream()
                 .filter(table -> !table.isReservedTable() && table.getSize() >= numberOfPeople)
                 .findFirst().orElse(null);
-        if (currentTable == null){
+        if (currentTable == null) {
             return String.format(RESERVATION_NOT_POSSIBLE, numberOfPeople);
         }
         currentTable.reserve(numberOfPeople);
@@ -93,10 +93,10 @@ public class ControllerImpl implements Controller {
     public String orderHealthyFood(int tableNumber, String healthyFoodName) {
         Table currentTable = tableRepository.byNumber(tableNumber);
         HealthyFood currentFood = healthFoodRepository.foodByName(healthyFoodName);
-        if (currentTable == null){
+        if (currentTable == null) {
             return String.format(WRONG_TABLE_NUMBER, tableNumber);
-        } else if (currentFood == null){
-           return String.format(NONE_EXISTENT_FOOD, healthyFoodName);
+        } else if (currentFood == null) {
+            return String.format(NONE_EXISTENT_FOOD, healthyFoodName);
         }
         currentTable.orderHealthy(currentFood);
         return String.format(FOOD_ORDER_SUCCESSFUL, healthyFoodName, tableNumber);
@@ -106,9 +106,9 @@ public class ControllerImpl implements Controller {
     public String orderBeverage(int tableNumber, String name, String brand) {
         Table currentTable = tableRepository.byNumber(tableNumber);
         Beverages currentBeverage = beverageRepository.beverageByName(name, brand);
-        if (currentTable == null){
+        if (currentTable == null) {
             return String.format(WRONG_TABLE_NUMBER, tableNumber);
-        } else if (currentBeverage == null){
+        } else if (currentBeverage == null) {
             return String.format(NON_EXISTENT_DRINK, name, brand);
         }
         currentTable.orderBeverages(currentBeverage);

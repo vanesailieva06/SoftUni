@@ -1,6 +1,6 @@
 package Inheritance.Hero;
 
-public class SoulMaster extends DarkWizard{
+public class SoulMaster extends DarkWizard {
     public SoulMaster(String username, int level) {
         super(username, level);
     }

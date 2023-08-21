@@ -8,7 +8,7 @@ import java.util.*;
 
 public class HealthFoodRepositoryImpl implements Repository<HealthyFood>, HealthFoodRepository<HealthyFood> {
 
-    private Map<String, HealthyFood> entities;
+    private final Map<String, HealthyFood> entities;
 
     public HealthFoodRepositoryImpl() {
         entities = new LinkedHashMap<>();

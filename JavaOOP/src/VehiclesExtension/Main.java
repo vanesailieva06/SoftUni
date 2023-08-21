@@ -9,12 +9,12 @@ public class Main {
         double fuelQuantity = Double.parseDouble(carData[1]);
         double fuelConsumption = Double.parseDouble(carData[2]);
         double tankCapacity = Double.parseDouble(carData[3]);
-        Vehicle car = new Car(fuelQuantity,fuelConsumption,tankCapacity);
+        Vehicle car = new Car(fuelQuantity, fuelConsumption, tankCapacity);
         String[] truckData = getData(scanner);
         fuelQuantity = Double.parseDouble(truckData[1]);
         fuelConsumption = Double.parseDouble(truckData[2]);
         tankCapacity = Double.parseDouble(truckData[3]);
-        Vehicle truck = new Truck(fuelQuantity,fuelConsumption,tankCapacity);
+        Vehicle truck = new Truck(fuelQuantity, fuelConsumption, tankCapacity);
         String[] busData = getData(scanner);
         fuelQuantity = Double.parseDouble(busData[1]);
         fuelConsumption = Double.parseDouble(busData[2]);
@@ -26,18 +26,18 @@ public class Main {
             String command = data[0];
             String vehicle = data[1];
             double distance;
-            switch (command){
+            switch (command) {
                 case "Drive":
                     try {
                         distance = Double.parseDouble(data[2]);
                         if ("Car".equals(vehicle)) {
                             System.out.println(car.drive(distance));
-                        } else if("Bus".equals(vehicle)) {
+                        } else if ("Bus".equals(vehicle)) {
                             System.out.println(bus.drive(distance));
-                        }else{
+                        } else {
                             System.out.println(truck.drive(distance));
                         }
-                    }catch (IllegalArgumentException exception){
+                    } catch (IllegalArgumentException exception) {
                         System.out.println(exception.getMessage());
                     }
                     break;
@@ -46,12 +46,12 @@ public class Main {
                     try {
                         if ("Car".equals(vehicle)) {
                             car.refuel(liters);
-                        } else if ("Bus".equals(vehicle)){
+                        } else if ("Bus".equals(vehicle)) {
                             bus.refuel(liters);
                         } else {
                             truck.refuel(liters);
                         }
-                    }catch (IllegalArgumentException exception){
+                    } catch (IllegalArgumentException exception) {
                         System.out.println(exception.getMessage());
                     }
                     break;

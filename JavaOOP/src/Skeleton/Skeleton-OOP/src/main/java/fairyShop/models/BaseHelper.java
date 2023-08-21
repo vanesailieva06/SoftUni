@@ -5,10 +5,10 @@ import java.util.Collection;
 
 import static fairyShop.common.ExceptionMessages.HELPER_NAME_NULL_OR_EMPTY;
 
-public abstract class BaseHelper implements Helper{
+public abstract class BaseHelper implements Helper {
     private String name;
     private int energy;
-    private Collection<Instrument> instruments;
+    private final Collection<Instrument> instruments;
     private static final int DECREASE_ENERGY = 10;
 
     public BaseHelper(String name, int energy) {
@@ -19,9 +19,9 @@ public abstract class BaseHelper implements Helper{
 
     @Override
     public void work() {
-        if (energy - DECREASE_ENERGY < 0){
+        if (energy - DECREASE_ENERGY < 0) {
             setEnergy(0);
-        }else {
+        } else {
             setEnergy(energy - DECREASE_ENERGY);
         }
 
@@ -53,7 +53,7 @@ public abstract class BaseHelper implements Helper{
     }
 
     public void setName(String name) {
-        if (name == null || name.trim().isEmpty()){
+        if (name == null || name.trim().isEmpty()) {
             throw new NullPointerException(HELPER_NAME_NULL_OR_EMPTY);
         }
         this.name = name;

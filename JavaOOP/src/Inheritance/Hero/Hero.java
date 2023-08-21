@@ -1,8 +1,8 @@
 package Inheritance.Hero;
 
 public class Hero {
-    private String username;
-    private int level;
+    private final String username;
+    private final int level;
 
     public Hero(String username, int level) {
         this.username = username;

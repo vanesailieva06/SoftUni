@@ -17,12 +17,12 @@ public class Main {
         field.setAccessible(true);
         String command = scanner.nextLine();
         int sum = 0;
-        while (!"END".equals(command)){
+        while (!"END".equals(command)) {
             String commandName = command.split("_")[0];
-            int value = Integer.parseInt( command.split("_")[1]);
+            int value = Integer.parseInt(command.split("_")[1]);
             Method method = clazz.getDeclaredMethod(commandName, int.class);
             method.setAccessible(true);
-            method.invoke(blackBoxInt,value);
+            method.invoke(blackBoxInt, value);
             System.out.println(field.get(blackBoxInt));
             command = scanner.nextLine();
         }

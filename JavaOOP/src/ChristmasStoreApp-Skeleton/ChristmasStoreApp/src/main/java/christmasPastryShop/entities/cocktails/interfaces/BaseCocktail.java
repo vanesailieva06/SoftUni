@@ -38,28 +38,28 @@ public class BaseCocktail implements Cocktail {
     }
 
     public void setName(String name) {
-        if (name == null || name.trim().isEmpty()){
+        if (name == null || name.trim().isEmpty()) {
             throw new IllegalArgumentException(INVALID_NAME);
         }
         this.name = name;
     }
 
     public void setSize(int size) {
-        if (size <= 0){
+        if (size <= 0) {
             throw new IllegalArgumentException(INVALID_SIZE);
         }
         this.size = size;
     }
 
     public void setPrice(double price) {
-        if (price <= 0){
+        if (price <= 0) {
             throw new IllegalArgumentException(INVALID_PRICE);
         }
         this.price = price;
     }
 
     public void setBrand(String brand) {
-        if (brand == null || brand.trim().isEmpty()){
+        if (brand == null || brand.trim().isEmpty()) {
             throw new IllegalArgumentException(INVALID_BRAND);
         }
         this.brand = brand;
@@ -68,7 +68,7 @@ public class BaseCocktail implements Cocktail {
     @Override
     public String toString() {
         return String.format("%s %s - " +
-                "%dml - %.2flv", this.price,
+                        "%dml - %.2flv", this.price,
                 this.brand, this.size, this.price);
     }
 }

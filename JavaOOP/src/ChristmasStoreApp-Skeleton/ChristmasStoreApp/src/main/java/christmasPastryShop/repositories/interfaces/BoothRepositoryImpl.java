@@ -4,7 +4,7 @@ import christmasPastryShop.entities.booths.interfaces.Booth;
 
 import java.util.Collection;
 
-public class BoothRepositoryImpl implements Repository<Booth>, BoothRepository<Booth>{
+public class BoothRepositoryImpl implements Repository<Booth>, BoothRepository<Booth> {
 
     private Collection<Booth> models;
 

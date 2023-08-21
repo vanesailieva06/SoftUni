@@ -1,7 +1,6 @@
 package aquarium.core;
 
 
-
 import aquarium.common.Command;
 
 import java.io.BufferedReader;
@@ -11,10 +10,10 @@ import java.util.Arrays;
 
 public class EngineImpl implements Engine {
     private Controller controller;
-    private BufferedReader reader;
+    private final BufferedReader reader;
 
     public EngineImpl() {
-       // this.controller = new ControllerImpl(); //TODO implement first
+        // this.controller = new ControllerImpl(); //TODO implement first
         this.reader = new BufferedReader(new InputStreamReader(System.in));
     }
 
@@ -35,6 +34,7 @@ public class EngineImpl implements Engine {
             System.out.println(result);
         }
     }
+
     private String processInput() throws IOException {
         String input = this.reader.readLine();
         String[] tokens = input.split("\\s+");
@@ -71,8 +71,9 @@ public class EngineImpl implements Engine {
         }
         return result;
     }
+
     private String addAquarium(String[] data) {
-      //TODO
+        //TODO
         return null;
     }
 

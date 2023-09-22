@@ -1,13 +1,10 @@
-package softuni.exam.models.entity;
+package com.example.demo.model.entity;
 
-
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import jakarta.persistence.*;
 
 @MappedSuperclass
 public abstract class BaseEntity {
+
     private Long id;
 
     public BaseEntity() {

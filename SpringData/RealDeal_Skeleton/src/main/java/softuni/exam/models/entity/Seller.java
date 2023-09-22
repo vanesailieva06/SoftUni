@@ -1,8 +1,6 @@
 package softuni.exam.models.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import javax.persistence.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

@@ -33,7 +33,6 @@ public class User extends BaseEntity{
     private String lastName;
     private boolean isActive;
     private List<UserRole> userRole;
-    private String imageUrl;
     private LocalDateTime created;
     private LocalDateTime modified;
 
@@ -94,14 +93,6 @@ public class User extends BaseEntity{
         this.userRole = userRole;
     }
 
-    @Column(name = "image_url")
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
 
     @Column(name = "created")
     public LocalDateTime getCreated() {

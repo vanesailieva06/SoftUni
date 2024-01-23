@@ -50,7 +50,6 @@ public class UserServiceImpl implements UserService {
         map.setActive(true);
         map.setCreated(LocalDateTime.now());
         map.setModified(LocalDateTime.now());
-        map.setImageUrl(null);
         userRepository.save(map);
     }
 }

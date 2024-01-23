@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotNull;
 
 import java.util.List;
 
-public class UserRegisterDto {
+public class  UserRegisterDto {
     private String firstName;
     private String lastName;
     private String username;

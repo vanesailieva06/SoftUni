@@ -1,16 +1,21 @@
 package com.example.pathfinder.service;
 
-import com.example.pathfinder.model.service.UserServiceModel;
+import com.example.pathfinder.model.dto.UserLoginDto;
+import com.example.pathfinder.model.dto.UserRegisterDto;
+import com.example.pathfinder.model.entity.User;
 
 public interface UserService {
 
-    void userRegister(UserServiceModel userServiceModel);
+    void userRegister(UserRegisterDto userServiceModel);
 
-    UserServiceModel findByUsernameAndPassword(String username, String password);
+    UserLoginDto findByUsernameAndPassword(String username, String password);
 
     void logout();
 
-    UserServiceModel findById(Long id);
+    User findById(Long id);
 
-    UserServiceModel findByUsername(String username);
+    User findByUsername(String username);
+
+    User findByID(Long id);
+
 }

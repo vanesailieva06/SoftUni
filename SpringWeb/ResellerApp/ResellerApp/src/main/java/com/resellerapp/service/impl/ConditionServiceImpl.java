@@ -36,4 +36,9 @@ public class ConditionServiceImpl implements ConditionService {
                     conditionRepository.save(condition);
                 });
     }
+
+    @Override
+    public Condition findByEnumName(ConditionNameEnum condition) {
+        return conditionRepository.findByName(condition).orElse(null);
+    }
 }

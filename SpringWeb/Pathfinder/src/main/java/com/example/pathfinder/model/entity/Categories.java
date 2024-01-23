@@ -1,25 +1,23 @@
 package com.example.pathfinder.model.entity;
 
-import com.example.pathfinder.model.entity.enums.NameEnum;
+import com.example.pathfinder.model.entity.enums.CategoryEnum;
 import jakarta.persistence.*;
-
-import java.util.Set;
 
 @Entity
 @Table(name = "categories")
 public class Categories extends BaseEntity{
-    private NameEnum name;
+    private CategoryEnum name;
     private String description;
 
     public Categories() {
     }
 
     @Enumerated(EnumType.STRING)
-    public NameEnum getName() {
+    public CategoryEnum getName() {
         return name;
     }
 
-    public void setName(NameEnum name) {
+    public void setName(CategoryEnum name) {
         this.name = name;
     }
 

@@ -3,6 +3,7 @@ package com.example.demo.model.entity;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -31,7 +32,7 @@ public class User extends BaseEntity{
     private String firstName;
     private String lastName;
     private boolean isActive;
-    private UserRole userRole;
+    private List<UserRole> userRole;
     private String imageUrl;
     private LocalDateTime created;
     private LocalDateTime modified;
@@ -84,12 +85,12 @@ public class User extends BaseEntity{
         isActive = active;
     }
 
-    @ManyToOne
-    public UserRole getUserRole() {
+    @ManyToMany(fetch = FetchType.EAGER)
+    public List<UserRole> getUserRole() {
         return userRole;
     }
 
-    public void setUserRole(UserRole userRole) {
+    public void setUserRole(List<UserRole> userRole) {
         this.userRole = userRole;
     }
 

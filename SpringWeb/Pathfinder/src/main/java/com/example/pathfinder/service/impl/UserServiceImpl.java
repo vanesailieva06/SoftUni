@@ -1,9 +1,9 @@
 package com.example.pathfinder.service.impl;
 
+import com.example.pathfinder.model.dto.UserLoginDto;
+import com.example.pathfinder.model.dto.UserRegisterDto;
 import com.example.pathfinder.model.entity.User;
 import com.example.pathfinder.model.entity.enums.LevelEnum;
-import com.example.pathfinder.model.service.UserServiceModel;
-import com.example.pathfinder.model.view.UserViewModel;
 import com.example.pathfinder.repository.UserRepository;
 import com.example.pathfinder.service.UserService;
 import com.example.pathfinder.util.CurrentUser;
@@ -24,8 +24,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void userRegister(UserServiceModel userServiceModel) {
-        User user = modelMapper.map(userServiceModel, User.class);
+    public void userRegister(UserRegisterDto userRegisterDto) {
+        User user = modelMapper.map(userRegisterDto, User.class);
 
         user.setLevel(LevelEnum.BEGINNER);
 
@@ -33,9 +33,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserServiceModel findByUsernameAndPassword(String username, String password) {
+    public UserLoginDto findByUsernameAndPassword(String username, String password) {
         return userRepository.findByUsernameAndPassword(username, password)
-                .map(user -> modelMapper.map(user, UserServiceModel.class))
+                .map(user -> modelMapper.map(user, UserLoginDto.class))
                 .orElse(null);
     }
 
@@ -46,16 +46,20 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserServiceModel findById(Long id) {
+    public User findById(Long id) {
         return userRepository.findById(id)
-                .map(user -> modelMapper.map(user, UserServiceModel.class))
                 .orElse(null);
     }
 
     @Override
-    public UserServiceModel findByUsername(String username) {
+    public User findByUsername(String username) {
         return userRepository.findByUsername(username)
-                .map(user -> modelMapper.map(user, UserServiceModel.class))
                 .orElse(null);
+    }
+
+    @Override
+    public User findByID(Long id) {
+
+        return userRepository.findById(id).orElse(null);
     }
 }

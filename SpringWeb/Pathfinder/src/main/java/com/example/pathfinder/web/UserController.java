@@ -2,8 +2,7 @@ package com.example.pathfinder.web;
 
 import com.example.pathfinder.model.dto.UserLoginDto;
 import com.example.pathfinder.model.dto.UserRegisterDto;
-import com.example.pathfinder.model.service.UserServiceModel;
-import com.example.pathfinder.model.view.UserViewModel;
+import com.example.pathfinder.model.dto.UserViewDto;
 import com.example.pathfinder.service.UserService;
 import com.example.pathfinder.util.CurrentUser;
 import jakarta.validation.Valid;
@@ -61,7 +60,7 @@ public class UserController {
         boolean isExist = userService.findByUsername(userRegisterDto.getUsername()) != null;
 
         if (!isExist) {
-            userService.userRegister(modelMapper.map(userRegisterDto, UserServiceModel.class));
+            userService.userRegister(userRegisterDto);
             return "redirect:login";
         }
         return "redirect:register";
@@ -77,7 +76,7 @@ public class UserController {
             return "redirect:login";
         }
 
-        UserServiceModel user = userService.findByUsernameAndPassword(userLoginDto.getUsername(), userLoginDto.getPassword());
+        UserLoginDto user = userService.findByUsernameAndPassword(userLoginDto.getUsername(), userLoginDto.getPassword());
 
         if (user == null){
             redirectAttributes.addFlashAttribute("userLoginDto", userLoginDto)
@@ -87,7 +86,7 @@ public class UserController {
         }
 
         currentUser.setUsername(user.getUsername());
-        currentUser.setId(user.getId());
+        currentUser.setId(userService.findByUsername(userLoginDto.getUsername()).getId());
 
         return "redirect:/";
     }
@@ -102,7 +101,7 @@ public class UserController {
     @GetMapping("/profile/{id}")
     public String profile(@PathVariable Long id, Model model){
         model.addAttribute("user",
-                modelMapper.map(userService.findById(id), UserViewModel.class));
+                modelMapper.map(userService.findById(id), UserViewDto.class));
         return "profile";
     }
 }

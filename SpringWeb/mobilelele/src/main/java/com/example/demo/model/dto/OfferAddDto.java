@@ -10,6 +10,8 @@ import java.math.BigDecimal;
 
 public class OfferAddDto {
     private String model;
+    private String brand;
+    private Long id;
     private BigDecimal price;
     private Engine engine;
     private Transmission transmission;
@@ -57,7 +59,7 @@ public class OfferAddDto {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(Integer year) {
         this.year = year;
     }
     @NotNull
@@ -65,7 +67,7 @@ public class OfferAddDto {
         return mileage;
     }
 
-    public void setMileage(int mileage) {
+    public void setMileage(Integer mileage) {
         this.mileage = mileage;
     }
     @NotNull
@@ -83,5 +85,21 @@ public class OfferAddDto {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
